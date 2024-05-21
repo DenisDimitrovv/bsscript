@@ -10,11 +10,11 @@ for file in os.listdir(cwd):
         excel_files.append(file)
 
 # choose your sales file
-print("Choose your sales file")
+print("Вашите налични excel файлове:")
 for i in range(0, len(excel_files)):
-    print(f"({i + 1}) for {excel_files[i]}")
+    print(f"\tВъведете {i + 1} за {excel_files[i]}")
 
-choice = int(input(""))
+choice = int(input("\nИзберете файлът за продажби: "))
 sales_filename = excel_files[choice - 1]
 
 # load the sales workbook
@@ -52,9 +52,9 @@ for key, value in sales_dict.items():
         duplicates.append(key)
 
 if no_duplicates:
-    print("There are no duplicates in this file")
+    print("Няма дублирани артикули.")
 else:
-    print("Your duplicates are")
+    print("\nДублираните артикули са: ")
     [print(file) for file in duplicates]
     
 input()
